@@ -3,7 +3,7 @@ import { Clock } from '@/app/components/Clock';
 import { PinKiosk } from '@/app/components/PinKiosk';
 import { Dashboard } from '@/app/components/Dashboard';
 import { Toaster } from 'sonner';
-import logo from "/assets/Logo.png";
+import logo from "/assets/purionlogo.svg";
 import '../styles/index.css';
 import '../styles/theme.css';
 import '../styles/tailwind.css';
