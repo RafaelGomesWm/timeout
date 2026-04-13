@@ -5,8 +5,7 @@ import { toast } from 'sonner';
 import { format } from 'date-fns';
 import { pt } from 'date-fns/locale';
 import { supabase } from '@/lib/supabase';
-import clockIcon from "figma:asset/a3497bedc319b7848aa5810d9c6a55111f0ef68d.png";
-import timecutText from "figma:asset/c8efd5d814a51b9d425429ab41084213799e9200.png";
+import logo from "/assets/purionlogo.svg";
 
 interface User {
   id: string;
@@ -56,7 +55,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
     try {
       const { data, error } = await supabase
         .from('employees')
-        .select('id, company_id, full_name, pin_ponto')
+        .select('id, full_name, pin_ponto, company_id')
         .eq('pin_ponto', pin)
         .maybeSingle();
 
@@ -91,7 +90,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
           {timeString}
         </h1>
         <div className="bg-white/10 px-6 py-2 rounded-full border border-white/20">
-          <p className="text-xl text-white font-medium">{getGreeting()}, bem-vindo à Webminds</p>
+          <p className="text-xl text-white font-medium">{getGreeting()}, bem-vindo à Purion</p>
         </div>
       </div>
 
