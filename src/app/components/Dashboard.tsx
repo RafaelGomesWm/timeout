@@ -186,7 +186,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   const InfoRow = ({ label1, value1, label2, value2 }: { label1: string, value1: string | null, label2: string, value2: string | null}) => (
     <div className="grid grid-cols-2 gap-4 py-2 border-b border-slate-100 last:border-0">
       <div className="flex flex-col">
-        <span className="text-xs font-bold text-[rgb(3,25,116)] uppercase tracking-wider">{label1}</span>
+        <span className="text-xs font-bold text-[rgb(210,210,210)] uppercase tracking-wider">{label1}</span>
         <span className={`text-base font-semibold ${value1 ? 'text-[#031974]' : 'text-slate-300 italic'}`}>
           {value1 || 'Ainda não'}
         </span>
@@ -232,7 +232,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
       {/* Header Squares */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Square: Date & Time */}
-        <div className="bg-[rgb(3,25,116)] rounded-[30px] p-6 shadow-lg border border-slate-100 flex flex-col items-center justify-center text-center min-h-[220px]">
+        <div className="bg-[rgb(0,0,0)] rounded-[30px] p-6 shadow-lg border border-slate-100 flex flex-col items-center justify-center text-center min-h-[220px]">
           <span className="text-lg font-medium text-[rgb(255,255,255)] mb-2">
             {dateString}
           </span>
