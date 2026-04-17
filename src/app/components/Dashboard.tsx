@@ -186,14 +186,14 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   const InfoRow = ({ label1, value1, label2, value2 }: { label1: string, value1: string | null, label2: string, value2: string | null}) => (
     <div className="grid grid-cols-2 gap-4 py-2 border-b border-slate-100 last:border-0">
       <div className="flex flex-col">
-        <span className="text-xs font-bold text-[rgb(210,210,210)] uppercase tracking-wider">{label1}</span>
-        <span className={`text-base font-semibold ${value1 ? 'text-[#031974]' : 'text-slate-300 italic'}`}>
+        <span className="text-xs font-bold text-[rgb(0, 0, 0)] uppercase tracking-wider">{label1}</span>
+        <span className={`text-base font-semibold ${value1 ? 'text-[#031974]' : 'text-slate-400 italic'}`}>
           {value1 || 'Ainda não'}
         </span>
       </div>
       <div className="flex flex-col">
-        <span className="text-xs font-bold text-[rgb(3,25,116)] uppercase tracking-wider">{label2}</span>
-        <span className={`text-base font-semibold ${value2 ? 'text-[#031974]' : 'text-slate-300 italic'}`}>
+        <span className="text-xs font-bold text-[rgb(0, 0, 0)] uppercase tracking-wider">{label2}</span>
+        <span className={`text-base font-semibold ${value2 ? 'text-[#031974]' : 'text-slate-400 italic'}`}>
           {value2 || 'Ainda não'}
         </span>
       </div>
@@ -204,23 +204,23 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="w-full max-w-6xl mx-auto p-4 md:p-8 space-y-8 bg-[rgb(211,233,255)] rounded-[30px] relative overflow-hidden"
+      className="w-full max-w-6xl mx-auto p-4 md:p-8 space-y-8 bg-[rgb(0, 0, 0)] rounded-[30px] relative overflow-hidden"
     >
       {/* Countdown Overlay for Finished Shift */}
       {countdown !== null && !isProcessing && (
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute inset-0 z-50 bg-[rgb(3,25,116)]/90 flex flex-col items-center justify-center text-white text-center p-8 rounded-[30px]"
+          className="absolute inset-0 z-50 bg-[rgb(0, 0, 0)]/90 flex flex-col items-center justify-center text-black text-center p-8 rounded-[30px]"
         >
-          <div className="bg-white/5 p-8 rounded-full mb-6">
+          <div className="bg-black/3 p-8 rounded-full mb-6">
             <CheckCircle size={80} className="text-emerald-400" />
           </div>
-          <h2 className="text-3xl font-bold mb-4">Turno Encerrado</h2>
+          <h2 className="text-3xl text-slate-500 font-bold mb-4">Turno Encerrado</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-md">
             Já registou a sua saída hoje. A sessão será encerrada automaticamente.
           </p>
-          <div className="text-6xl font-bold bg-white text-[rgb(3,25,116)] w-24 h-24 rounded-full flex items-center justify-center shadow-2xl">
+          <div className="text-6xl font-bold bg-black text-[rgb(255, 255, 255)] w-24 h-24 rounded-full flex items-center justify-center shadow-2xl">
             {countdown}
           </div>
           <p className="mt-6 text-blue-200 animate-pulse">
@@ -242,13 +242,13 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
         </div>
 
         {/* Right Square: User Info & Punches */}
-        <div className="bg-[rgb(255,255,255)] rounded-[30px] p-6 shadow-lg border border-slate-100 min-h-[220px]">
+        <div className="bg-[rgb(0, 0, 0)] rounded-[30px] p-6 shadow-lg border border-slate-100 min-h-[220px]">
           <div className="flex items-center gap-4 mb-4 pb-3 border-b border-slate-100">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-[#031974]">
+            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-black">
               <UserCircle size={28} />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-[#031974]">
+              <h3 className="text-lg font-bold text-black">
                 {getGreeting()}, {user.full_name}
               </h3>
             </div>
