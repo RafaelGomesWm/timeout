@@ -80,29 +80,29 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
   const timeString = format(currentTime, 'HH:mm:ss');
 
   return (
-    <div className="w-full max-w-2xl mx-auto overflow-hidden rounded-[40px] bg-[rgb(255,255,255)] shadow-2xl border border-slate-100">
+    <div className="w-full max-w-2xl mx-auto overflow-hidden rounded-[40px] bg-[rgb(85, 85, 85)] shadow-2xl border border-slate-100">
       {/* Top part of the square interior */}
       <div className="bg-[rgb(0,0,0)] p-10 text-center border-b border-slate-50 flex flex-col items-center">
-        <h2 className="text-2xl font-medium text-white/80 mb-2 ">
+        <h2 className="text-2xl font-medium text-white mb-2 ">
           {dateString}
         </h2>
         <h1 className="text-[64px] font-bold text-white leading-none mb-6">
           {timeString}
         </h1>
-        <div className="bg-white/10 px-6 py-2 rounded-full border border-white/20">
+        <div className="bg-white/20 px-6 py-2 rounded-full border border-white/20">
           <p className="text-xl text-white font-medium">{getGreeting()}, bem-vindo à Purion</p>
         </div>
       </div>
 
-      <div className="flex flex-col bg-[rgb(190,190,190)] p-4 md:p-10 pt-4 md:pt-10 pb-4 md:pb-10">
+      <div className="flex flex-col bg-[rgb(172, 172, 172)] p-4 md:p-10 pt-4 md:pt-10 pb-4 md:pb-10">
         <div className="flex flex-col md:flex-row gap-12 items-center justify-between w-full">
           {/* Left: PIN Display Area */}
           <div className="flex-1 flex flex-col items-center md:items-start w-full md:ml-[60px]">
             <p className="text-base md:text-xl text-[rgb(0,0,0)] font-medium mb-[16px] text-center md:text-left md:ml-[42px]">Digite o seu PIN</p>
-            <div className="w-full max-w-[200px] md:max-w-[240px] h-14 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center gap-3 px-6 shadow-inner relative overflow-hidden mx-auto md:mx-0">
+            <div className="w-full max-w-[200px] md:max-w-[240px] h-14 md:h-16 bg-slate-100 rounded-2xl flex items-center justify-center gap-3 px-6 shadow-inner relative overflow-hidden mx-auto md:mx-0">
               {isLoading && (
                 <div className="absolute inset-0 bg-white/50 flex items-center justify-center z-10">
-                  <div className="w-6 h-6 border-2 border-[rgb(3,25,116)] border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-[rgb(0, 0, 0)] border-t-transparent rounded-full animate-spin" />
                 </div>
               )}
               <AnimatePresence mode="popLayout">
@@ -113,7 +113,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     className={`w-4 h-4 rounded-full transition-colors duration-200 ${
-                      i < pin.length ? 'bg-[#031974]' : 'bg-slate-200'
+                      i < pin.length ? 'bg-black' : 'bg-slate-200'
                     }`}
                   />
                 ))}
